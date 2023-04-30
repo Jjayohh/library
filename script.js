@@ -43,25 +43,29 @@ function render() {
 function addBook(item) {
   const newDiv = document.createElement("div");
   const DivContainer = document.getElementById("libraryBoxes");
-  const bookTitle = document.getElementById("title");
-  const bookAuthor = document.getElementById("author");
-  const bookPages = document.getElementById("pages");
-  // const bookRead = document.getElementById("read");
+  const bookTitle = document.createElement("div");
+  const bookAuthor = document.createElement("div");
+  const bookPages = document.createElement("div");
+  // const bookRead = document.createElement("read");
 
   newDiv.classList.add("book");
   newDiv.setAttribute("id", myLibrary.indexOf(item));
 
-  bookTitle.classList.add("title");
-  bookTitle.textContent = item.title;
+  bookTitle.classList.add(".title");
+  bookTitle.textContent = title.value;
   newDiv.appendChild(bookTitle);
 
-  bookAuthor.classList.add("author");
-  bookAuthor.textContent = item.author;
+  bookAuthor.classList.add(".author");
+  bookAuthor.textContent = author.value;
   newDiv.appendChild(bookAuthor);
 
-  bookPages.classList.add("pages");
-  bookPages.textContent = item.pages;
+  bookPages.classList.add(".pages");
+  bookPages.textContent = pages.value;
   newDiv.appendChild(bookPages);
+
+  // bookRead.classList.add(".read");
+  // bookRead.textContent = read.value;
+  // newDiv.appendChild(bookRead);
 
   DivContainer.appendChild(newDiv);
 }
