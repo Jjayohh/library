@@ -24,6 +24,10 @@
 // console.log(myLibrary.info);
 
 let popup = document.getElementById("popup");
+let bookTitle = document.getElementById("title");
+let bookAuthor = document.getElementById("author");
+let bookPages = document.getElementById("pages");
+let bookRead = document.getElementById("read");
 
 function openPopup() {
   popup.classList.add("open-popup");

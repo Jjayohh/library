@@ -15,8 +15,22 @@
       </button>
       <div class="popup" id="popup">
         <h2>Book Entry</h2>
-        <p>asdadasd</p>
+
+        <form class="bookInput">
+          <label for="bookTitle" class="input"></label><br />
+          <input type="text" id="title" name="title" />Title:<br />
+          <label for="bookAuthor" class="input"></label><br />
+          <input type="text" id="author" name="author" />Author:<br />
+          <label for="bookPages" class="input"></label><br />
+          <input type="text" id="pages" name="pages" />Pages:<br />
+          <label for="bookRead" class="input"></label><br />
+          <input type="checkbox" id="read" name="read" />Read?<br />
+        </form>
+
         <button type="button" onclick="closePopup()">Submit</button>
+      </div>
+      <div class="libraryBoxes">
+        <p1></p1>
       </div>
     </div>
   </body>
