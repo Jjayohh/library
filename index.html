@@ -25,14 +25,16 @@
           <input type="text" id="pages" name="pages" />Pages:<br />
           <label for="bookRead" class="input"></label><br />
           <input type="checkbox" id="read" name="read" />Read?<br />
-        </form>
 
-        <button type="button" onclick="closePopup()">Submit</button>
+          <button type="submit" form="form" id="subBtn" onclick="closePopup()">
+            Submit
+          </button>
+        </form>
       </div>
-      <div class="libraryBoxes">
-        <p1></p1>
+      <div id="libraryBoxes">
+        <!-- <div class="book">hello i am Book</div> -->
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>

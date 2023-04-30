@@ -1,8 +1,3 @@
-// let myLibrary = [];
-// //console.log(myLibrary);
-
-// let newBook;
-
 // class Book {
 //   constructor(title, author, pages, read) {
 //     this.title = form.title.value;
@@ -12,22 +7,30 @@
 //   }
 // }
 
-// function addBookToLibrary(title, author, pages, read) {
-//   newBook = new Book(title, author, pages, read);
-//   myLibrary.push(newBook);
-//   SVGMetadataElement();
-//   WebGL2RenderingContext();
-//   form.reset();
-// }
+// let myLibrary = [];
+// //console.log(myLibrary);
+// let newBook;
 
-// console.log(addBookToLibrary("book", me, 11, yes));
-// console.log(myLibrary.info);
+function addBookToLibrary() {
+  newBook = new Book(title, author, pages, read);
+  myLibrary.push(newBook);
+  SVGMetadataElement();
+  WebGL2RenderingContext();
+  form.reset();
+}
 
-let popup = document.getElementById("popup");
-let bookTitle = document.getElementById("title");
-let bookAuthor = document.getElementById("author");
-let bookPages = document.getElementById("pages");
-let bookRead = document.getElementById("read");
+const popup = document.getElementById("popup");
+const libraryBoxes = document.getElementById("libraryBoxes");
+// const bookTitle = document.getElementById("#title");
+// const bookAuthor = document.getElementById("#author");
+// const bookPages = document.getElementById("#pages");
+// const bookRead = document.getElementById("#read");
+const addBtn = document.querySelector("#subBtn");
+const DivContainer = document.getElementById("libraryBoxes");
+
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+// });
 
 function openPopup() {
   popup.classList.add("open-popup");
@@ -36,3 +39,12 @@ function openPopup() {
 function closePopup() {
   popup.classList.remove("open-popup");
 }
+
+function addBook() {
+  const newDiv = document.createElement("div");
+
+  newDiv.classList.add("book");
+  DivContainer.appendChild(newDiv);
+}
+
+addBtn.addEventListener("click", addBook);

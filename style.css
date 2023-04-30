@@ -14,7 +14,7 @@ body {
 h1 {
   display: flex;
   margin: 0 auto;
-  padding: 5%;
+  padding: 3%;
   justify-content: center;
   text-align: center;
   font-size: 48px;
@@ -22,14 +22,15 @@ h1 {
 
 .container {
   width: 100%;
-  margin: 50;
+  margin: 40;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .btn {
-  padding: 10px 50px;
+  padding: 10px 40px;
   border: 0;
   outline: none;
   cursor: pointer;
@@ -37,6 +38,55 @@ h1 {
   font-weight: 200;
   border-radius: 25px;
 }
+
+/*book info*/
+
+#libraryBoxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2em 0em;
+}
+
+.book {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 400px;
+  width: 300px;
+  background-color: darkolivegreen;
+  border: 5px solid black;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.title {
+  font-size: 18px;
+  color: black;
+}
+
+.author {
+  font-size: 16px;
+  color: black;
+}
+
+.pages {
+  font-size: 16px;
+  color: black;
+}
+
+.read {
+}
+/* 
+.book:nth-child(odd) {
+  box-shadow: 0px 0px 10px var(black);
+}
+
+.book:nth-child(even) {
+  box-shadow: 0px 0px 10px var(rgb(110, 110, 110));
+} */
 
 .popup {
   width: 370px;
