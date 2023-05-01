@@ -22,6 +22,8 @@ let myLibrary = [];
 let newBook;
 
 function addBookToLibrary() {
+  event.preventDefault();
+
   newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
   SVGMetadataElement();
@@ -46,28 +48,54 @@ function addBook(item) {
   const bookTitle = document.createElement("div");
   const bookAuthor = document.createElement("div");
   const bookPages = document.createElement("div");
-  // const bookRead = document.createElement("read");
+  const bookRead = document.createElement("button");
+  const removeBtn = document.createElement("button");
 
   newDiv.classList.add("book");
   newDiv.setAttribute("id", myLibrary.indexOf(item));
+  DivContainer.appendChild(newDiv);
 
-  bookTitle.classList.add(".title");
+  bookTitle.classList.add("title");
   bookTitle.textContent = title.value;
   newDiv.appendChild(bookTitle);
 
-  bookAuthor.classList.add(".author");
+  bookAuthor.classList.add("author");
   bookAuthor.textContent = author.value;
   newDiv.appendChild(bookAuthor);
 
-  bookPages.classList.add(".pages");
+  bookPages.classList.add("pages");
   bookPages.textContent = pages.value;
   newDiv.appendChild(bookPages);
 
-  // bookRead.classList.add(".read");
-  // bookRead.textContent = read.value;
-  // newDiv.appendChild(bookRead);
+  bookRead.classList.add("bookRead");
+  bookRead.setAttribute("id", "readBtn");
+  newDiv.appendChild(bookRead);
 
-  DivContainer.appendChild(newDiv);
+  if (item.read === false) {
+    bookRead.textContent = "Not Read";
+    bookRead.style.backgroundColor = "#e04f63";
+    bookRead.style.color = "#000000";
+  } else {
+    bookRead.textContent = "Read";
+    bookRead.style.backgroundColor = "#ffffff";
+    bookRead.style.color = "#000000";
+  }
+
+  removeBtn.textContent = "Remove";
+  removeBtn.setAttribute("id", "removeBtn");
+  newDiv.appendChild(removeBtn);
+
+  removeBtn.addEventListener("click", () => {
+    myLibrary.splice(myLibrary.indexOf(item), 1);
+    setData();
+    render();
+  });
+
+  bookRead.addEventListener("click", () => {
+    item.read = !item.read;
+    setData();
+    render();
+  });
 }
 
 addBtn.addEventListener("click", addBook, render);
