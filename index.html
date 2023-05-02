@@ -17,22 +17,26 @@
         <h2>Book Entry</h2>
 
         <form class="bookInput">
-          <label for="bookTitle" class="input"></label><br />
-          <input type="text" id="title" name="title" />Title:<br />
-          <label for="bookAuthor" class="input"></label><br />
-          <input type="text" id="author" name="author" />Author:<br />
-          <label for="bookPages" class="input"></label><br />
-          <input type="text" id="pages" name="pages" />Pages:<br />
-          <label for="bookRead" class="input"></label><br />
-          <input type="checkbox" id="read" name="read" value="yes" />Read?<br />
+          <p><input type="text" id="title" name="title" />Title:<br /></p>
+
+          <p><input type="text" id="author" name="author" />Author:<br /></p>
+
+          <p><input type="text" id="pages" name="pages" />Pages:<br /></p>
+
+          <p>
+            <input
+              type="checkbox"
+              id="read"
+              name="read"
+              value="yes"
+            />Read?<br />
+          </p>
           <button type="submit" form="form" id="subBtn" onclick="closePopup()">
             Submit
           </button>
         </form>
       </div>
-      <div id="libraryBoxes">
-        <!-- <div class="book">hello i am Book</div> -->
-      </div>
+      <div id="libraryBoxes"></div>
     </div>
     <script src="script.js"></script>
   </body>
