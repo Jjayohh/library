@@ -1,4 +1,6 @@
 const addBtn = document.querySelector("#subBtn");
+addBtn.addEventListener("click", addBookToLibrary);
+
 const popup = document.getElementById("popup");
 
 function openPopup() {
@@ -26,58 +28,58 @@ function addBookToLibrary() {
 
   newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
-  SVGMetadataElement();
-  WebGL2RenderingContext();
+  setData();
   render();
   form.reset();
 }
 
 function render() {
-  const display = document.getElementById("libraryBoxes");
-  const books = document.querySelectorAll(".book");
+  const display = document.getElementById("LibraryBoxes");
+  const books = document.querySelectorAll("book");
   books.forEach((book) => display.removeChild(book));
 
   for (let i = 0; i < myLibrary.length; i++) {
-    createBook(myLibrary[i]);
+    addBook(myLibrary[i]);
   }
 }
 
 function addBook(item) {
   const library = document.querySelector("#libraryBoxes");
   const DivContainer = document.getElementById("libraryBoxes");
-  const readBtn = document.getElementById("readBtn");
   const newDiv = document.createElement("div");
   const bookTitle = document.createElement("div");
   const bookAuthor = document.createElement("div");
   const bookPages = document.createElement("div");
   const bookRead = document.createElement("button");
   const removeBtn = document.createElement("button");
+  const readBtn = document.getElementById("readBtn");
 
   newDiv.classList.add("book");
   newDiv.setAttribute("id", myLibrary.indexOf(item));
   DivContainer.appendChild(newDiv);
 
   bookTitle.classList.add("title");
-  bookTitle.textContent = title.value;
+  bookTitle.textContent = item.title;
   newDiv.appendChild(bookTitle);
 
   bookAuthor.classList.add("author");
-  bookAuthor.textContent = author.value;
+  bookAuthor.textContent = item.author;
   newDiv.appendChild(bookAuthor);
 
   bookPages.classList.add("pages");
-  bookPages.textContent = pages.value;
+  bookPages.textContent = item.pages;
   newDiv.appendChild(bookPages);
 
   bookRead.classList.add("readBtn");
   bookRead.setAttribute("id", "readBtn");
   newDiv.appendChild(bookRead);
+
   if (item.read === false) {
-    readBtn.textContent = "Not Read";
-    readBtn.style.color = "#000000";
+    bookRead.textContent = "Not Read";
+    bookRead.style.color = "#000000";
   } else {
-    readBtn.textContent = "Read";
-    readBtn.style.color = "#000000";
+    bookRead.textContent = "Read";
+    bookRead.style.color = "#000000";
   }
 
   removeBtn.textContent = "Remove";
@@ -99,7 +101,7 @@ function addBook(item) {
   });
 }
 
-addBtn.addEventListener("click", addBook, render);
+// addBtn.addEventListener("click", addBook);
 
 function setData() {
   localStorage.setItem(`myLibrary`, JSON.stringify(myLibrary));

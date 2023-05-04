@@ -4,32 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <title>Library</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>Library Project</h1>
     <div class="container">
-      <button type="newBtn" class="btn" onclick="openPopup()">
+      <button type="submit" class="btn" onclick="openPopup()">
         Enter Book
       </button>
       <div class="popup" id="popup">
         <h2>Book Entry</h2>
-
-        <form class="bookInput">
-          <p><input type="text" id="title" name="title" />Title:<br /></p>
-
-          <p><input type="text" id="author" name="author" />Author:<br /></p>
-
-          <p><input type="text" id="pages" name="pages" />Pages:<br /></p>
-
+        <form id="form" class="bookInput">
+          <p><input type="text" id="title" name="title" />Title:</p>
+          <p><input type="text" id="author" name="author" />Author:</p>
+          <p><input type="number" id="pages" name="pages" />Pages:</p>
           <p>
-            <input
-              type="checkbox"
-              id="read"
-              name="read"
-              value="read"
-            />Read<br />
+            <input type="checkbox" id="read" name="read" value="read" />Read
           </p>
           <button type="submit" form="form" id="subBtn" onclick="closePopup()">
             Submit
