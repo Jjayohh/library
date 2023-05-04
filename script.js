@@ -45,7 +45,7 @@ function render() {
 function addBook(item) {
   const library = document.querySelector("#libraryBoxes");
   const DivContainer = document.getElementById("libraryBoxes");
-  const readBtn = document.getElementById("read");
+  const readBtn = document.getElementById("readBtn");
   const newDiv = document.createElement("div");
   const bookTitle = document.createElement("div");
   const bookAuthor = document.createElement("div");
@@ -72,12 +72,12 @@ function addBook(item) {
   bookRead.classList.add("readBtn");
   bookRead.setAttribute("id", "readBtn");
   newDiv.appendChild(bookRead);
-  if (item.Read === false) {
-    bookRead.textContent = "Not Read";
-    bookRead.style.color = "#000000";
+  if (item.read === false) {
+    readBtn.textContent = "Not Read";
+    readBtn.style.color = "#000000";
   } else {
-    bookRead.textContent = "Read";
-    bookRead.style.color = "#000000";
+    readBtn.textContent = "Read";
+    readBtn.style.color = "#000000";
   }
 
   removeBtn.textContent = "Remove";
@@ -92,7 +92,7 @@ function addBook(item) {
     render();
   });
 
-  readBtn.addEventListener("click", () => {
+  bookRead.addEventListener("click", () => {
     item.read = !item.read;
     setData();
     render();
